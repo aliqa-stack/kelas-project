@@ -1,0 +1,560 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  height: 100%;
+background: linear-gradient(165deg, #676767 20%, #A6A6A6 50%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.center-input {
+            display: flex;
+            justify-content: center;
+        }
+.center {
+            display: grid;
+            justify-content: center;
+            margin: 10px;
+        }
+        .center-kelas{
+          display: flex;
+          justify-content: center
+        }
+
+.container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 30px;
+            max-width: 150px;
+            width: 100%;
+            margin: 10px;
+        }
+.card-kelas {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3a7bd5 100%);
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+.card-kelas::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+.card-component{
+  
+  width: 100%;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  
+}
+
+.card-kelas:hover {
+            transform: scale(1.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            z-index: 10;
+            min-height: 60px;
+        }
+         .card-kelas:hover::before {
+            opacity: 1;
+        }
+        .card-kelas:hover .card-icon {
+            font-size: 3rem;
+            transform: translateY(-5px);
+        }
+        .card-kelas:hover .card-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .card-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.75rem;
+            text-align: center;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            line-height: 1.5;
+        }
+        .card-kelas:hover .card-description {
+            opacity: 1;
+            max-height: 100px;
+            font-size: 0.9rem;
+        }
+        .card-info {
+            display: flex;
+            gap: 15px;
+            margin-top: 0;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.8rem;
+        }
+
+
+ul{
+    display: grid;
+    justify-content: center;
+    
+}
+.list-siswa{
+  opacity: 0;
+ transform: translateX(100px);
+  transition: all 0.5s ease;
+  display: flex;
+  justify-content: center;
+  background: rgb(255, 255, 255, 0.15);
+  border-radius: 10px;
+  color: #E6501B;
+  font-weight: bold;
+  text-transform: uppercase;
+  width:300px;
+  margin: 10px;
+  margin-left: 0px;
+  padding: 10px;
+  height: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.55);
+  box-shadow: 0px 10px 32px rgba(0, 0, 0, 0.486);
+}
+.b-container{
+  position: relative;
+  padding: 4px;
+  margin-left: 5px;
+  background:rgb(250, 255, 178);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px rgb(250, 255, 170);
+}
+
+.hidden{
+  display: none;
+}
+.show {
+  display: show;
+}
+
+.input-dec{
+ /* From Uiverse.io by anniekoop */
+  max-width: 150px;
+  align-items: center;
+  padding: 0.875rem;
+  font-size: 1rem;
+  border: 1.5px solid #000;
+  border-radius: 0.5rem;
+  box-shadow: 2.5px 3px 0 #000;
+  outline: none;
+  transition: ease 0.25s;
+}
+
+.input-dec:focus {
+  box-shadow: 5.5px 7px 0 black;
+}
+/* From Uiverse.io by Yaya12085 */ 
+.card-siswa{
+  max-width: 320px;
+  border-width: 1px;
+  border-color: rgba(219, 234, 254, 1);
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  grid-gap: 1rem;
+  gap: 1rem;
+}
+
+.icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: rgba(96, 165, 250, 1);
+  padding: 0.5rem;
+  color: rgba(255, 255, 255, 1);
+}
+
+.icon svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.alert {
+  font-weight: 600;
+  color: rgba(107, 114, 128, 1);
+}
+
+.message {
+  margin-top: 1rem;
+  color: rgba(107, 114, 128, 1);
+}
+
+.actions {
+  margin-top: 1.5rem;
+}
+
+.actions a {
+  text-decoration: none;
+}
+
+.mark-as-read, .read {
+  display: inline-block;
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+
+.read {
+  background-color: rgba(59, 130, 246, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.mark-as-read {
+  margin-top: 0.5rem;
+  background-color: rgba(249, 250, 251, 1);
+  color: rgba(107, 114, 128, 1);
+  transition: all .15s ease;
+}
+
+.mark-as-read:hover {
+  background-color: rgb(230, 231, 233);
+}
+#dtl-siswa{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 300px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(165.5deg, #BFC9D1 20%, #A6A6A6 50%);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 32px rgba(0,0,0,0.1);
+}
+.info-row{
+  display: grid;
+  flex-direction: column;
+  margin: 7px;
+  font-weight: bold;  
+  color: #E6501B;
+  
+}
+.info-value{
+  background: rgb(255, 255, 255 , 0.15);
+  border: solid 2px #000;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.212);
+}
+
+.cls-btn{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff5c5c;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+} 
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: transparent;
+  box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+
+}
+.navbar-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 2rem;
+  max-width: 1600px;
+}
+.navbar-logo{
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+
+}
+.navbar-container .navbar-menu{
+  display: flex;
+  text-align: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+.navbar-container .navbar-menu li a{
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 3px 20px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.navbar-container .navbar-menu li a:hover
+.navbar-container .navbar-menu li a.active{
+  color: rgb(43, 38, 38);
+  background: rgba(64, 224, 208, 0.418);
+  border: 2px solid rgba(255, 255, 255, 0.438);
+}
+.navbar-toggle{
+  display: none;
+  background: transparent;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background: white;
+  transition: all 0.3s ease ;
+}
+@media (max-width: 768px){
+  .navbar{
+    backdrop-filter: none;
+
+  }
+  .navbar-container .navbar-menu{
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.7rem !important;
+    position: absolute;
+    height: 100vh;
+    width: 250px;  
+    top: 0;
+    right: 0;
+    padding: 5rem 1.5rem;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+  }
+  .navbar-container .navbar-menu.active{
+    display: flex;
+  }
+  .navbar-toggle{
+   display: block;
+   z-index: 999;
+  }
+  .navbar-toggle.active .bar:nth-child(2){
+    opacity: 0;
+  }
+  .navbar-toggle.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  .navbar-toggle.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+@media(max-width: 480px){
+
+  .navbar-container{
+    padding: 0 1rem;
+  }
+  .navbar-logo{
+    font-size: 1.5rem;
+  }
+  .navbar-container .navbar-menu li a{
+    font-size: 1.2rem;
+    padding: 3px 15px;
+  }
+  
+}
+@media(max-width: 600px){
+ 
+  .card{
+    width: 95%;           /* Lebih lebar di HP agar tidak mubazir space */
+    translate: 0 50px;
+  }
+   .list-siswa{
+    width: 250px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+}
+.headers{
+  text-align: center;
+  color: white;
+  margin: 40px 0;
+}
+/* From Uiverse.io by gharsh11032000 */ 
+.center-card{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+   
+    
+}
+.card {
+  opacity: 0;
+  translate:0 100px;
+  width: 90%;            /* Gunakan persentase agar mengikuti layar */
+  max-width: 1000px;     /* Batas maksimal tetap 1000px di layar besar */
+  min-height: 200px;     /* Biarkan tinggi menyesuaikan konten jika teksnya panjang */
+  height: auto;
+  background-color: #4158D0;
+  background-image: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3a7bd5 100%);
+  border-radius: 8px;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  cursor: pointer;
+}
+
+.card-content {
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.card-content .card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: inherit;
+  text-transform: uppercase;
+}
+
+.card-content .card-para {
+  color: inherit;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.card:hover {
+  transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  z-index: 1;
+}
+
+.card:hover:before {
+  transform: translateX(-100%);
+}
+
+.card:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  z-index: 1;
+}
+
+.card:hover:after {
+  transform: translateX(100%);
+}
+.card.show{
+  opacity: 1;
+  translate: 0 0;
+}
+.heading-4 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            position: relative;
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 0 40px;
+        }
+
+        .heading-4::before,
+        .heading-4::after {
+            content: '✦';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #3498db;
+            font-size: 1.5rem;
+        }
+
+        .heading-4::before {
+            left: 0;
+        }
+
+        .heading-4::after {
+            right: 0;
+        }
+.siswa-li .show-li{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+       
