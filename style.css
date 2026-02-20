@@ -265,7 +265,8 @@ ul{
   background: linear-gradient(165.5deg, #BFC9D1 20%, #A6A6A6 50%);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0px 4px 32px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 32px rgba(0,0,0,0.15);
+  z-index: 1;
 }
 .info-row{
   display: grid;
@@ -276,12 +277,12 @@ ul{
   
 }
 .info-value{
-  background: rgb(255, 255, 255 , 0.15);
+  background: rgb(255, 255, 255, 0.15);
   border: solid 2px #000;
   margin: 5px;
   padding: 5px;
   border-radius: 10px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.212);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .cls-btn{
