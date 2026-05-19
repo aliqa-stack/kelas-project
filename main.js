@@ -64,7 +64,23 @@ const observer = new IntersectionObserver((entries) => {
     threshold: 0.2,
     rootMargin: "0px"
 });
+const observer2 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show-child');
+        
+        }
+        else{
+            entry.target.classList.remove('show-child');
+        }
+        
+    });
+}, {
+    threshold: 0.2,
+    rootMargin: "0px"
+});
 
+const sections = document.querySelectorAll(".child");
 function animation(){
     const students = document.querySelectorAll(".list-siswa");
 const anima = new IntersectionObserver((entries) => {
@@ -82,6 +98,8 @@ const anima = new IntersectionObserver((entries) => {
 });
 students.forEach(student => anima.observe(student));
 }
+sections.forEach(section => observer2.observe(section));
+console.log(observer)
 
 cards.forEach(card => observer.observe(card));
 
